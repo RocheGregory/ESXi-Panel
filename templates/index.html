@@ -2,26 +2,10 @@
 <html>
 <head>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
 </head>
 <body>
-    <?php
-        $command = escapeshellcmd('py isOnline.py "Windows Server 2016 Training"');
-        $output = shell_exec($command);
-    ?>
-    <!--
-    <?php
-        if (isset($_POST['button']))
-        {
-            exec ('"C:\Program Files (x86)\VMware\VMware Remote Console\vmrc.exe" vmrc://root@192.168.182.132?moid=1');
-        }
-    ?>
-    <form method="post">
-        <button name="button">Open remote desktop</button>
-    </form>
-    -->
-
     <div class="container-fluid">
         <div class="sidenav">
             <a><i class="nav-icon material-icons">home</i></a>
@@ -36,28 +20,18 @@
                         <p class="ip">97.93.100.53</p>
                     </div>
                     <div class="col-6">
-                        <?php
-                            if ($output == "Off\n") {
-                                echo '<p class="status" style="background-color: #ff6860">Offline</p>';
-                            }
-                            else if ($output == "On\n") {
-                                echo '<p class="status" style="background-color: #ABF5A8">Online</p>';
-                            }
-                        ?>
+                        <p class="status" style="background-color: #ff6860">Offline</p>
+                        <!--<p class="status" style="background-color: #ABF5A8">Online</p>-->
                     </div>
                 </div>
             </div>
             
             <div class="right-side">
                 <div class="power">
-                    <?php  
-                        if ($output == "Off\n") {
-                            echo '<a href="https://google.com" class="power-button" style="" data-toggle="tooltip" data-placement="bottom" title="Power on">
+                    <!--    <a href="https://google.com" class="power-button" data-toggle="tooltip" data-placement="bottom" title="Power on">
                                 <i class="material-icons">power_settings_new</i>
-                            </a>';
-                        }
-                        else if ($output == "On\n") {
-                            echo '<a href="https://google.com" class="power-button" data-toggle="tooltip" data-placement="bottom" title="Power off">
+                            </a> -->
+                            <a href="https://google.com" class="power-button" data-toggle="tooltip" data-placement="bottom" title="Power off">
                                 <i class="material-icons">power_settings_new</i>
                             </a>
                             <a href="https://google.com" class="restart-button" data-toggle="tooltip" data-placement="bottom" title="Restart">
@@ -65,9 +39,7 @@
                             </a>
                             <a href="https://google.com" class="reset-button" data-toggle="tooltip" data-placement="bottom" title="Reset">
                                 <i class="material-icons">settings_backup_restore</i>
-                            </a>';
-                        }
-                    ?>
+                            </a>
                 </div>
             </div>
         </div>
@@ -84,10 +56,10 @@
     </div>
 
     <!-- JavaScript -->
-    <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/vmcontrol.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.2.1.slim.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/vmcontrol.js') }}"></script>
     <script type="text/javascript">
         $(function () {
         $('[data-toggle="tooltip"]').tooltip()
