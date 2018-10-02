@@ -1,0 +1,344 @@
+/* Font faces (Futura PT) */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPTLight.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPtBook.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPTMedium.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPTDemi.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPTHeavy.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPTBold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPTExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/MaterialIcons.woff2") format('woff2');
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    transform: translateY(3px);
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+body {
+    background-color: #2d2d2d;
+    background-image: url("../graphics/Tiles.png");
+    background-size: auto;        
+    background-repeat: no-repeat;      
+    padding: 40px 40px 40px 150px;
+}
+.tooltip-inner {
+    font-family: "Futura PT", sans-serif;
+    font-size: 18px;
+    color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.cards-row {
+    padding-top: 80px;
+}
+.remote-card {
+    background-color: #212121;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 5px 11px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 5px 11px 0px rgba(0,0,0,0.08);
+    box-shadow: 0px 5px 11px 0px rgba(0,0,0,0.08);
+}
+.remote-card-body{
+    padding: 25px 25px 0px 25px;
+}
+.remote-card-title {
+    font-family: "Futura PT", sans-serif;
+    color: #f1f1f1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.remote-card-button {
+    font-family: "Futura PT", sans-serif;
+    color: #f1f1f1;
+    font-size: 30px;
+    background-color: #FCC15A;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 0px;
+    transition: 0.3s;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.remote-card-button:hover {
+    background-color: #f4ad2e;
+    color: #f1f1f1;
+}
+.remote-status {
+    font-family: "Futura PT", sans-serif;
+    color: #686868;
+    font-weight: 200;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 3px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.left-side {
+    float: left;
+    width: 80%;
+}
+.right-side {
+    float: right;
+    width: 20%;
+}
+.ip {
+    background-color: #73CFB6;
+    width: 210px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+    font-family: "Futura PT", sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.power {
+    background-color: #3D3D3D;
+    padding: 15px;
+    width: auto;
+    border-radius: 100px;
+    color: white;
+    float: right;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.power-button {
+    background-color: #E3FFD1;
+    color: #6DFF68;
+    font-size: 36px;
+    padding: 3px;
+    border-radius: 100px;
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.power-button:hover {
+    background-color: #d6ffbc;
+    color: #6DFF68;
+    text-decoration: none;
+    transform: translateY(1px);
+}
+.restart-button {
+    background-color: #FFEDCF;
+    color: #FFBE5D;
+    font-size: 36px;
+    padding: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 100px;
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.restart-button:hover {
+    background-color: #ffe7bf;
+    color: #FFBE5D;
+    text-decoration: none;
+    transform: translateY(1px);
+}
+.reset-button {
+    background-color: #ffe0e0;
+    color: #FF6060;
+    font-size: 36px;
+    padding: 3px;
+    border-radius: 100px;
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.reset-button:hover {
+    background-color: #ffd8d8;
+    color: #FF6060;
+    text-decoration: none;
+    transform: translateY(1px);
+}
+.status {
+    width: 120px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+    font-family: "Futura PT", sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.status-row {
+    width: 450px;
+}
+.title {
+    font-family: "Futura PT", sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    color: white;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.sidenav {
+    height: 100%;
+    width: 90px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #202020;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+.nav-icon {
+    color: #f1f1f1;
+    padding-left: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.nav-icon:hover {
+    color: #ececec;
+}
