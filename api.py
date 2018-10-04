@@ -61,36 +61,23 @@ users = [
 ]
 
 class User(Resource):
-    def get(self, name):
-        cursor.execute("SELECT * FROM `vms`")
+    def get(self, id):
+
+        # Get correct power reading
+        connection = connect.ConnectNoSSL("192.168.182.132", 443, "root", "toasterddos")
+        cursor.execute("SELECT `name` FROM `vms` WHERE `id`='" + str(id) + "'")
+        vm = getVM(connection.content, cursor.fetchone()["name"])
+        cursor.execute("UPDATE `vms` SET `power`='" + str(vm.runtime.powerState) + "' WHERE `id`='" + str(id) + "'")
+        connect.Disconnect(connection)
+
+        cursor.execute("SELECT * FROM `vms` WHERE `id`='" + str(id) + "'")
         vms = cursor.fetchall()
         for vm in vms:
-            if(name == vm["name"]):
+            if(id == vm["id"]):
                 return vm, 200
         return "VM not found.", 404
 
-    def post(self, name):
-        parser = reqparse.RequestParser()
-        parser.add_argument("description", required=True, help="Missing parameter.")
-        parser.add_argument("owner", required=True, help="Missing parameter.")
-        parser.add_argument("location", required=True, help="Missing parameter.")
-        parser.add_argument("OS", required=True, help="Missing parameter.")
-        parser.add_argument("api-key", required=True, help="Missing API key.")
-        args = parser.parse_args()
-        
-        global apikey
-        if (apikey == args["api-key"]):
-            # Add to database
-            cursor.execute("INSERT INTO `vms` (`id`, `name`, `description`, `owner`, `location`, `ip`, `boottime`, `OS`) VALUES (NULL, '" + name + "', '" + args["description"] + "', '" + args["owner"] + "', 'off', '', '', '" + args["OS"] + "')")
-            
-            # Create VM
-            #connection = connect.ConnectNoSSL("192.168.182.132", 443, "root", "ddos")
-
-            return "Request accepted.", 201
-        return "Bad API key.", 403
-
-
-    def put(self, id):
+    def post(self, id):
         parser = reqparse.RequestParser()
         parser.add_argument("name")
         parser.add_argument("description")
@@ -101,27 +88,28 @@ class User(Resource):
         parser.add_argument("api-key", required=True, help="Missing API key.")
         args = parser.parse_args()
 
-        if (args["power"] == "on" and len(args) > 0):
+        global apikey
+
+        # Power management
+        if (args["power"] == "poweredOn" and len(args) > 0 and apikey == args["api-key"]):
             connection = connect.ConnectNoSSL("192.168.182.132", 443, "root", "toasterddos")
             cursor.execute("SELECT `name` FROM `vms` WHERE `id`='" + str(id) + "'")
             vm = getVM(connection.content, cursor.fetchone()["name"])
             vm.PowerOn()
             connect.Disconnect(connection)
             return "On.", 200
-        elif (args["power"] == "off" and len(args) > 0):
+        elif (args["power"] == "poweredOff" and len(args) > 0 and apikey == args["api-key"]):
             connection = connect.ConnectNoSSL("192.168.182.132", 443, "root", "toasterddos")
             cursor.execute("SELECT `name` FROM `vms` WHERE `id`='" + str(id) + "'")
             vm = getVM(connection.content, cursor.fetchone()["name"])
             vm.PowerOff()
             connect.Disconnect(connection)
             return "Off.", 200
+        return "Bad request.", 403
 
-       # global apikey
-        #if (apikey == args["api-key"]):
-        #    # Add to database
-       #     cursor.execute("UPDATE `vms` SET `name`='" + args["name"] + "', `description`='" + args["description"] + "', `owner`='" + args["owner"] + "', `location`='" + args["location"] + "', `OS`='" + args["OS"] + "' WHERE `name`='" + name + "'")
-       #     return "Request accepted.", 201
-       # return "Bad API key.", 403
+    
+   #def put(self, id):
+        
 
 
     def delete(self, name):

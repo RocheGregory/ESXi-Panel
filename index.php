@@ -3,7 +3,7 @@
 <head>
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vm.css">
 </head>
 <body>
     <?php
